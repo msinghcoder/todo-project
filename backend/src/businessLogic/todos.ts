@@ -37,6 +37,7 @@ export async function createAttachmentPresignedUrl(todoId: string, userId: strin
     logger.info("create attachment  presigned url for to do", { ToDoId: todoId, UserId: userId })
 
     const uploadUrl = attachmentUtils.getSignedURL(todoId)
+    logger.info("Upload Url" + uploadUrl)
     await toDoAccess.putAttachment(userId, todoId)
     return uploadUrl;
 
@@ -47,7 +48,7 @@ export async function getTodosForUser(userId: string): Promise<TodoItem[]> {
     return await toDoAccess.getTodosForUser(userId);
 }
 export async function updateTodo(userId: string, todoId: string, updatedTodo: UpdateTodoRequest) {
-    logger.info("Updating toDos for user id", { UserId: userId, ToDoId: todoId, UpdateToDoRequest: updatedTodo})
+    logger.info("Updating toDos for user id", { UserId: userId, ToDoId: todoId, UpdateToDoRequest: updatedTodo })
 
     return await toDoAccess.updateTodo(userId, todoId, updatedTodo);
 }
