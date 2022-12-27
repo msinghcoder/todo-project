@@ -26,6 +26,7 @@ provider:
     TODOS_CREATED_AT_INDEX: CreatedAtIndex
     ATTACHMENT_S3_BUCKET: udacity-msingh-serverless-todo-images-${self:provider.stage}
     SIGNED_URL_EXPIRATION: 300
+    
 
   logs:
     # Enable API Gateway logs
